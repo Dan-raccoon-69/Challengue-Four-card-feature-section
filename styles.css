@@ -1,4 +1,5 @@
-/* GLOBAL */
+
+/* GLOBAL **************/
 
 :root{
     --Supervisor: hsl(180, 62%, 55%);
@@ -34,12 +35,13 @@ body{
 .main__container{
     width: 80%;
     margin: 4rem auto;
-    /* outline: 1px solid red; */
     display: flex;
     flex-direction: column;
     gap: 4rem;
 
 }
+
+/* 1er section, main text **********/
 
 .main__text{
     padding: 0.5rem;
@@ -63,7 +65,9 @@ body{
     text-align: center;
 }
 
-/* MAIN CARDS */
+
+/* 2da section, main cards **********/
+
 .main__cards{
     display: flex;
     flex-direction: column;
@@ -74,6 +78,7 @@ body{
 
 .main__card{
     max-width: 350px;
+    max-height: 300px;
     padding: 2.5rem;
     background-color: var(--White);
     border-radius: 0.5rem;
@@ -124,32 +129,68 @@ body{
 
 @media screen and (min-width:767px) and (max-width:1023px) {
     .main__subtitle{
-        font-size: 2.9rem;
+        font-size: 2.4rem;
     }
     
     .main__title{
-        font-size: 3rem;
-        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
     }
     
     .main__p{
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
-    .main__card{
-        max-width: 400px;
-    }
-    
-    .main__card__title{
-        font-size: 2.5rem;
-    }
-    
-    .main__card__p{
-        margin-bottom: 3rem;
-        font-size: 2rem;
-    }
 }
 
 @media screen and (min-width: 1024px) {
     
+    .main__cards{
+        width: 100%;
+        max-height: 500px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+        gap: 3rem;
+    }
+
+    .main__card{
+        box-shadow: 0px 0px 10px 1px var(--Card__text);
+        max-width: 100%;
+    }
+
+    .main__p{
+        width: 50%;
+        margin: auto;
+    }
+    
+    .main__card--2{
+        /* card Team Builder */
+        grid-row: 1 / 5;
+    }
+    
+    .main__card--2,
+    .main__card--3{
+        grid-column: 2 / 3;
+    }
+    
+    .main__card--3{
+        /* card Karma */
+        grid-row: 5 / -1;
+    }
+    
+    .main__card--1,
+    .main__card--4{
+        grid-row: 3 / 7;
+    }
+
+    .main__card--1{
+        /* card Supervisor */
+        grid-column: 1 / 2;
+    }
+    
+    .main__card--4{
+        /* card Calculator */
+        grid-column: 3 / 4;
+    }      
 }
